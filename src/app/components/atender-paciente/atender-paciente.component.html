@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-sm-7">
+    <button class="float-right btn btn-outline-warning" routerLink="/pages/components/pacientes">
+      <<</button> <h3>Atendiendo al paciente:
+        <strong>{{PacienteAtender?.nombre}} {{PacienteAtender?.apellido}}</strong>
+        </h3>
+
+        <br>
+        <span class="card-title d-block p-2 bg-primary text-white">Historial Del Paciente
+          <span class="float-right badge badge-secondary">{{PacienteAtender?.profesionalesAsignados?.length}}</span>
+        </span>
+        <div class="card">
+          <textarea #historial cols=10 rows=10 [ngModel]="PacienteAtender?.historial">
+              {{PacienteAtender?.historial}}
+          </textarea>
+
+        </div>
+        <br>
+        <p> <strong>Seleccione la lista de especialistas requeridos disponibles:</strong> </p>
+        <ul>
+
+          <li *ngFor="let profesional of listaProfesionales;let indice=index">
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" [disabled]="!profesional.editable" [checked]='profesional.ocupado'
+                [id]="indice" (click)="asignarProfesionalToPacient(profesional,$event.target.checked)">
+              <label class="custom-control-label" [ngStyle]="{'text-decoration':!profesional.editable? 'line-through': 'none'}" [for]="indice">{{profesional.Especialidad}}</label>
+            </div>
+          </li>
+
+          <!-- <li *ngFor="let profesional of listaProfesionales">
+        <nb-checkbox status="success" [value]="validarProfesionalAsignado(profesional)" class="col-sm-4">{{profesional.Especialidad}}</nb-checkbox>
+      </li> -->
+        </ul>
+  </div>
+  <div class="col-sm-5">
+    <img src="../../../assets/images/doctor.png" width=250 height=400 class="img-fluid">
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-7">
+    <button class="btn btn-primary btn-block" (click)="atenderPaciente(historial.value)">Asignar Especialistas</button>
+  </div>
+</div>

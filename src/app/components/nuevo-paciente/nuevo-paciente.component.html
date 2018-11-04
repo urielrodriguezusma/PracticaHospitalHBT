@@ -1,0 +1,53 @@
+<div>
+  <h3>Nuevo Paciente</h3>
+  <br>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <form>
+      <div class="form-group">
+        <label for="cedula">Tipo Documento</label>
+        <select name="tipoDoc" class=form-control [(ngModel)]="tipoDocumento">
+          <option value="selec">Seleccione el tipo de documento</option>
+          <option value="cedula">Cedula</option>
+          <option value="tarjeta">Tarjeta Identidad</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="cedula">Cédula</label>
+        <input [(ngModel)]="registroPaciente.cedula" name="cedula" type="text" class="form-control" placeholder="Cedula">
+      </div>
+
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" [(ngModel)]="registroPaciente.nombre" class="form-control" placeholder="Nombre">
+      </div>
+      <div class="form-group">
+        <label for="apellidos">Apellidos</label>
+        <input name="apellido" [(ngModel)]="registroPaciente.apellido" type="text" class="form-control" placeholder="Apellidos">
+      </div>
+      <div class="form-group">
+        <label for="apellidos">Historial</label>
+        <textarea name="historial" [(ngModel)]="registroPaciente.historial" cols=2 placeholder="Historial" class="form-control"></textarea>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <button class="btn btn-primary" (click)="almacenarRegistroPaciente()">Almacenar Registro</button>
+        </div>
+        <div class="col-sm-6 text text-right">
+            <button class="btn btn-outline-primary" routerLink="/pages/components/pacientes"> Regresar Lista Pacientes</button>
+          </div>
+        <!-- <div class="col-sm-6">
+          <a class="btn btn-outline-primary text-right" [routerLink]="['/pages/components/pacientes']">Regresar</a>
+        </div> -->
+      </div>
+    </form>
+  </div>
+
+  <div class="col-sm-5">
+    <img src="../../../assets/images/paciente.png" class="img-fluid">
+  </div>
+</div>
