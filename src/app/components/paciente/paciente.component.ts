@@ -62,7 +62,7 @@ export class PacienteComponent implements OnInit {
             this.liberarProfesionalesPacienteEliminado(paciente);
           }
           this.lstPacientes.splice(indice,1);
-          swal('Eliminado!','El paciente a sido eliminado correctamente','success')
+          swal('Eliminado!','El paciente ha sido eliminado correctamente','success')
         })
       }
     })

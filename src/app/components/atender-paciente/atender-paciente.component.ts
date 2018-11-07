@@ -90,7 +90,7 @@ export class AtenderPacienteComponent implements OnInit {
           .subscribe(resp => console.log(resp));
         swal(
           "Atendido!",
-          "El paciente a sido atendido correctamente",
+          "El paciente ha sido atendido correctamente",
           "success"
         );
       }
