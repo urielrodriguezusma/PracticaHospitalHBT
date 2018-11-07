@@ -70,9 +70,13 @@ export class PacienteComponent implements OnInit {
 
 liberarProfesionalesPacienteEliminado(pacienteEliminado:Paciente){
   let listaProfesionales:Profesional[]=this._pacienteService.obtenerListaProfesionales();
-   for(let profesional in pacienteEliminado.profesionalesAsignados){
-       listaProfesionales.filter(d=>d.cedula==pacienteEliminado.profesionalesAsignados[profesional].cedula)[0].ocupado=false;
-   }
+  pacienteEliminado.profesionalesAsignados.map((profesional)=>{
+    listaProfesionales.filter(d=>d.cedula==profesional.cedula)[0].ocupado=false;
+    return profesional;
+  })
+  //  for(let profesional in pacienteEliminado.profesionalesAsignados){
+  //      listaProfesionales.filter(d=>d.cedula==pacienteEliminado.profesionalesAsignados[profesional].cedula)[0].ocupado=false;
+  //  }
 }
 
 }

@@ -15,14 +15,14 @@ export const MENU_ITEMS: NbMenuItem[] = [
     title: 'Menu Principal',
     icon: 'nb-grid-a',
     children: [
-      {
-        title: 'Usuarios',
-        link: '/pages/components/usuarios',
-      },
-      {
-        title: 'Productos',
-        link: '/pages/components/productos',
-      },
+      // {
+      //   title: 'Usuarios',
+      //   link: '/pages/components/usuarios',
+      // },
+      // {
+      //   title: 'Productos',
+      //   link: '/pages/components/productos',
+      // },
       {
         title: 'Nuevo Paciente',
         link: '/pages/components/nuevopaciente',
